@@ -19,15 +19,23 @@ jobs:
       with:
         python-version: 3.10
 
-    - name: Install Dependencies
+    - name: Install User Service Dependencies
       run: |
+        cd user-service
+        pip install -r requirements.txt
+
+    - name: Install Payment Service Dependencies
+      run: |
+        cd payment-service
+        pip install -r requirements.txt
+
+    - name: Install Transaction Service Dependencies
+      run: |
+        cd transaction-service
         pip install flask
 
-    - name: Check User Service
-      run: python -m py_compile user-service/app.py
-
-    - name: Check Payment Service
-      run: python -m py_compile payment-service/app.py
-
-    - name: Check Transaction Service
-      run: python -m py_compile transaction-service/app.py
+    - name: Check Python Files
+      run: |
+        python -m py_compile user-service/app.py
+        python -m py_compile payment-service/app.py
+        python -m py_compile transaction-service/app.py
