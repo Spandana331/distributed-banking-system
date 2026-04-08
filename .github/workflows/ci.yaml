@@ -23,11 +23,11 @@ jobs:
       run: |
         pip install flask
 
-    - name: Run User Service
-      run: python user-service/app.py
+    - name: Check User Service
+      run: python -m py_compile user-service/app.py
 
-    - name: Run Payment Service
-      run: python payment-service/app.py
+    - name: Check Payment Service
+      run: python -m py_compile payment-service/app.py
 
-    - name: Run Transaction Service
-      run: python transaction-service/app.py
+    - name: Check Transaction Service
+      run: python -m py_compile transaction-service/app.py
