@@ -1,2 +1,2 @@
-# distributed-banking-system
+banking-system
 Fintech
