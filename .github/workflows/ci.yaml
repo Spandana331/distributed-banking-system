@@ -6,7 +6,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
@@ -31,7 +30,6 @@ jobs:
 
     - name: Install Transaction Service Dependencies
       run: |
-        cd transaction-service
         pip install flask
 
     - name: Check Python Files
